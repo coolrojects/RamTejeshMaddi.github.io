@@ -1,25 +1,70 @@
-body{
-    /*border-color: rgb(160, 20, 20);*/
-    border-style: solid;
-    border-width: 5px;
-    margin: 0% 0% 0% 0%;
+@keyframes background {
+    0% {background-color: rgb(101, 119, 83);}
 }
-h1{
-    color: red;
+@keyframes imageSize {
+    0%, 18% {width: 400px;}
+    75% {width: 250px;}
+}
+@keyframes nameFadeIn {
+    0%,
+    80% {color: rgba(206, 231, 206, 0);}
+}
+@keyframes mySkills {
+    0%,
+    80% {color: rgba(206, 231, 206, 0); margin-left: 100%; border-top: none;}
+}
+@keyframes mySkillsBorder {
+    0%, 75%{border-top: none;}
+}
+@keyframes linksMoveIn {
+    0% {filter: opacity(0%);}
+    66% {filter: opacity(0%);}
+    100%{filter: opacity(100%);}
+}
+body{
+    margin: 0% 0% 0% 0%;
 }
 #my-image{
     width: 250px;
     border-radius: 50%;
+    animation-name: imageSize;
+    animation-duration: 2s;
+    text-align: right;
+}
+.background{
+    background-color: rgb(124, 0, 103);
+    animation-name: background;
+    animation-duration: 3s;
 }
 .my-details{
-    background-color: black;
-
-    border-style: solid;
-    border-width: 5px;
-    text-align: center;
     padding-top: 15%;
     padding-bottom: 15%;
+    display: flex;
+    align-items: center;
 }
-.my-details>h2{
+.my-details>div{
     color: rgb(206, 231, 206);
+
+}
+.myText>div{
+    width: 50%;
+}
+.myText{
+    padding-top: 8%;
+}
+.mySkills{
+    animation: mySkills, mySkillsBorder;
+    animation-duration: 3s, 4s;
+    border-top: 2px dashed black;
+}
+.my-details>div>div>h2{
+    color: rgb(206, 231, 206);
+    font-size: 1.25rem;
+    animation-name: nameFadeIn;
+    animation-duration: 2s;
+}
+.links{
+    animation-name: linksMoveIn;
+    animation-duration: 3s;
+    margin-bottom: 1%;
 }
